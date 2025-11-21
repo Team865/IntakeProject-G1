@@ -3,21 +3,21 @@ public interface RollersIO {
 
 	@AutoLog
 	pubic class RollerIOInputs{
-		boolean conected = false;
-		float curentAmps = 0.0;
+		boolean connected = false;
+		float currentAmps = 0.0;
 		float currentVolts = 0.0;
-		float positioRads = 0.0;
-		float rotSpeedRadsSeconds = 0.0;
+		float positionRads = 0.0;
+		float speedRads = 0.0;
 	}
 
 	private void updateInputs(RollerIOInputsAutoLogged inputs)();
 
 	private static void setVolts(int volts);
 
-	private void setAmps(int amps);
+	private static void setAmps(int amps);
 	
-	private static void intake();
+	private static default void intake() {};
 	
-	private static void outtake();
+	private static default void outtake() {};
 }
 
