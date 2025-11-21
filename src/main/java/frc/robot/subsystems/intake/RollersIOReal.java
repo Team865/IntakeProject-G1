@@ -1,4 +1,14 @@
 package frc.robot.subsystems.intake;
-class RollersIOReal implements RollersIO {
-  
+class RollersIOSim implements RollersIO {
+	@Override
+	private static void setVolts(int volts) {
+		
+	}
+	@Override
+	private static void intake() {
+		
+	}
+	private static void outtake() {
+		
+	}
 }
