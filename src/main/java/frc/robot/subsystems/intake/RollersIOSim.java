@@ -1,12 +1,12 @@
 package frc.robot.subsystems.intake;
-import com.ctre.phoenix6.sim
-private final class RollersIOSim implements RollersIO {
+import com.ctre.phoenix6.sim;
+public class RollersIOSim implements RollersIO {
 	@Override
-	private static void updateInputs() {
+	private void updateInputs() {
 		
 	}
 	@Override
-	private static void setVolts(int volts) {
+	private void setSupplyVolts(int volts) {
 		
 	}
 }
