@@ -1,14 +1,17 @@
 package frc.robot.subsystems.intake;
 
-import com.ctre.pheonix6.sim.TalonFX;
+import com.ctre.phoenix6.hardware.core.CoreTalonFX;
 
 class RollersIOSim implements RollersIO {
 
-    private final TalonFX rollerMotor = new TalonFX(Constants.RollerCANID);
+    private final CoreTalonFX rollerMotorSim = new CoreTalonFX(Constants.RollerCANID);
+    private final TalonFXSimState rollerMotorSimState = new TalonFXSimState(rollerMotorSim);
 
     @Override
-    private static void updateInputs() {}
+    private void updateInputs() {}
 
     @Override
-    private static void setVolts(int volts) {}
+    private void setVolts(double volts) {
+        rollerMotorSimState.setSupplyVoltage(volts);
+    }
 }
