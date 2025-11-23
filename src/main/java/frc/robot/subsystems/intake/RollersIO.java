@@ -1,6 +1,5 @@
 package frc.robot.subsystems.intake;
 public interface RollersIO {
-
 	@AutoLog
 	pubic class RollerIOInputs{
 		boolean connected = false;
@@ -15,9 +14,5 @@ public interface RollersIO {
 	private static void setVolts(int volts);
 
 	private static void setAmps(int amps);
-	
-	private static default void intake() {};
-	
-	private static default void outtake() {};
 }
 
