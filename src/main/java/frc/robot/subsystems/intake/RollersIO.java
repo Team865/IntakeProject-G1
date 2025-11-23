@@ -4,14 +4,13 @@ public interface RollersIO {
     @AutoLog
     public class RollerIOInputs {
         boolean connected = false;
-        float currentAmps = 0.0;
-        float currentVolts = 0.0;
-        float positionRads = 0.0;
-        float speedRads = 0.0;
+        double currentAmps = 0.0;
+        double currentVolts = 0.0;
+        double positionRads = 0.0;
+        double speedRads = 0.0;
     }
 
-    private void updateInputs(RollerIOInputsAutoLogged inputs) {}
-    ;
+    private void updateInputs(RollerIOInputsAutoLogged inputs) {};
 
     private void setVolts(int volts);
 
