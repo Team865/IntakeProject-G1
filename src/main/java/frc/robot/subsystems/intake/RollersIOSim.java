@@ -1,18 +1,9 @@
 package frc.robot.subsystems.intake;
-
-<<<<<<< HEAD
-public class RollersIOSim implements RollersIO {
-    @Override
-    private void updateInputs() {}
-
-    @Override
-    private void setSupplyVolts(int volts) {}
-=======
-import com.ctre.pheonix6.sim.TallonFX;
+import com.ctre.pheonix6.sim.TalonFX;
 
 class RollersIOSim implements RollersIO {
 
-	private final TallonFX rollerMotor = new TallonFX(Constants.RollerCANID);
+	private final TalonFX rollerMotor = new TalonFX(Constants.RollerCANID);
 
 	@Override
 	private static void updateInputs() {
@@ -22,5 +13,4 @@ class RollersIOSim implements RollersIO {
 	private static void setVolts(int volts) {
 		
 	}
->>>>>>> d26359c (initalized moters and added constant RollerCANID)
 }
