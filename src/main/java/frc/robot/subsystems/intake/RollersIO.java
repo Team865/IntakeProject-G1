@@ -11,8 +11,8 @@ public interface RollersIO {
 
 	private void updateInputs(RollerIOInputsAutoLogged inputs)();
 
-	private static void setVolts(int volts);
+	private void setVolts(int volts);
 
-	private static void setAmps(int amps);
+	private void setAmps(int amps);
 }
 
