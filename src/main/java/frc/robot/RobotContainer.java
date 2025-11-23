@@ -19,7 +19,8 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
  */
 public class RobotContainer {
     // Subsystems
-	private RollersSubsystem intake = new RollersSubsystem(RollersIOSim);
+    private RollersSubsystem m_rollersSubsystem = new RollersSubsystem(Constants.currentMode);
+	private final Command m_rollersSubsystemCommand = new Command(m_rollersSubsystem);
     // Controller
     private final CommandXboxController controller = new CommandXboxController(0);
 
@@ -51,7 +52,7 @@ public class RobotContainer {
      */
     private void configureButtonBindings() {
         // Configure trigger bindings hre
-        controller.y().onTrue(RollerSubsystem.intake());
-        controller.x().onTrue(RollerSubsystem.outtake());
+        controller.y().onTrue(rollersSubsystemCommand.intake());
+        controller.x().onTrue(rollersSubsystemCommand.outtake());
     }
 }

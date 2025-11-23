@@ -1,4 +1,5 @@
 package frc.robot.subsystems.intake;
+<<<<<<< HEAD
 public class RollersSubsystem extends SubsystemBase {
 	private boolean isIntakeEnabled = false;
 	private boolean isOuttakeEnabled = false;
@@ -28,4 +29,17 @@ public class RollersSubsystem extends SubsystemBase {
 			setVolts(0);
 		}
 	}	
+=======
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
+public class IntakeSubsystem extends SubsystemBase {
+  public IntakeSubsystem() {
+
+  }
+
+  @Override
+  public void periodic() {
+    
+  }
+>>>>>>> 9256733 (lol everything else)
 }
