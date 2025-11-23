@@ -1,18 +1,19 @@
 package frc.robot.subsystems.intake;
+
 public interface RollersIO {
-	@AutoLog
-	pubic class RollerIOInputs{
-		boolean connected = false;
-		float currentAmps = 0.0;
-		float currentVolts = 0.0;
-		float positionRads = 0.0;
-		float speedRads = 0.0;
-	}
+    @AutoLog
+    public class RollerIOInputs {
+        boolean connected = false;
+        float currentAmps = 0.0;
+        float currentVolts = 0.0;
+        float positionRads = 0.0;
+        float speedRads = 0.0;
+    }
 
-	private void updateInputs(RollerIOInputsAutoLogged inputs)();
+    private void updateInputs(RollerIOInputsAutoLogged inputs) {}
+    ;
 
-	private void setVolts(int volts);
+    private void setVolts(int volts);
 
-	private void setAmps(int amps);
+    private void setAmps(int amps);
 }
-
