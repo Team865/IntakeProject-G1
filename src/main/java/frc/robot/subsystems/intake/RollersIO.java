@@ -10,7 +10,8 @@ public interface RollersIO {
         double speedRads = 0.0;
     }
 
-    private void updateInputs(RollerIOInputsAutoLogged inputs) {};
+    private void updateInputs(RollerIOInputsAutoLogged inputs) {}
+    ;
 
     private void setVolts(int volts);
 
