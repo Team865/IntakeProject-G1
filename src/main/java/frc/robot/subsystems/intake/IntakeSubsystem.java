@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class IntakeSubsystem extends SubsystemBase {
     private boolean isIntakeEnabled = false;
     private boolean isOuttakeEnabled = false;
-    private ObjectDetectionIOInputsAutoLogged objectIO;
+    private ObjectDetectionIOInputsAutoLogged objectIO = new ObjectDetectionIOInputsAutoLogged();
     private IntakeIO io;
 
     public IntakeSubsystem() {
