@@ -3,10 +3,10 @@ package frc.robot.subsystems.intake;
 import com.ctre.phoenix6.hardware.core.CoreTalonFX;
 import com.ctre.phoenix6.sim;
 
-class RollersIOSim implements RollersIO {
+class IntakeIOSim implements IntakeIO {
 
-    private final CoreTalonFX rollerMotorSim = new CoreTalonFX(Constants.RollerCANID);
-    private final TalonFXSimState rollerMotorSimState = new TalonFXSimState(rollerMotorSim);
+    private final CoreTalonFX intakeMotorSim = new CoreTalonFX(Constants.IntakeCANID);
+    private final TalonFXSimState intakeMotorSimState = new TalonFXSimState(intakeMotorSim);
 
     @Override
     private void updateInputs() {}

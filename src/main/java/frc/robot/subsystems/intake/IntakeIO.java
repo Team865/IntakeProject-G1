@@ -1,10 +1,9 @@
 package frc.robot.subsystems.intake;
+import org.littletonrobotics.junction.AutoLog;
 
-import org.littletonrobotics.akit.junction.junction-autolog;
-
-public interface RollersIO {
+public interface IntakeIO {
     @AutoLog
-    public class RollerIOInputs {
+    public class IntakeIOInputs {
         boolean connected = false;
         double currentAmps = 0.0;
         double currentVolts = 0.0;
@@ -12,8 +11,7 @@ public interface RollersIO {
         double speedRads = 0.0;
     }
 
-    private void updateInputs(RollerIOInputsAutoLogged inputs) {}
-    ;
+    private void updateInputs(IntakeIOInputsAutoLogged inputs) {};
 
     private void setVolts(int volts);
 

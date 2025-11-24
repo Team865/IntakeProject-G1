@@ -2,8 +2,8 @@ plugins {
     id "java"
     id "edu.wpi.first.GradleRIO" version "2025.3.1"
     id "com.peterabeles.gversion" version "1.10"
-    id "com.diffplug.spotless" version "7.0.0.BETA4"
-    id "io.freefair.lombok" version "8.4"
+    //id "com.diffplug.spotless" version "7.0.0.BETA4"
+    //id "io.freefair.lombok" version "8.4"
 }
 
 java {
@@ -158,7 +158,7 @@ task(eventDeploy) {
 
 createVersionFile.dependsOn(eventDeploy)
 
-project.compileJava.dependsOn(spotlessApply)
+//project.compileJava.dependsOn(spotlessApply)
 // Configure Spotless code formatting using palantir standard
 '''
 spotless {

@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import frc.robot.subsystems.intake;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
@@ -19,7 +20,7 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
  */
 public class RobotContainer {
     // Subsystems
-    private IntakeSubsystem intake = new IntakeSubsystem(RollerIOAutoLogged);
+    private IntakeSubsystem intake = new IntakeSubsystem(IntakeIOAutoLogged);
     // Controller
     private final CommandXboxController controller = new CommandXboxController(0);
 

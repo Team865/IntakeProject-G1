@@ -2,9 +2,9 @@ package frc.robot.subsystems.intake;
 
 import com.ctre.phoenix6.hardware.TalonFX;
 
-class RollersIOReal implements RollersIO {
+class IntakeIOReal implements IntakeIO {
 
-    private final TalonFX rollerMotor = new TalonFX(Constants.RollerCANID);
+    private final TalonFX intakeMotor = new TalonFX(Constants.IntakeCANID);
 
     @Override
     private void updateInputs() {}

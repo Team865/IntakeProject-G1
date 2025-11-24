@@ -1,11 +1,11 @@
-package frc.robot.subsystems.intakel
+package frc.robot.subsystems.intake;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
-public class RollersSubsystem extends SubsystemBase {
+public class IntakeSubsystem extends SubsystemBase {
     private boolean isIntakeEnabled = false;
     private boolean isOuttakeEnabled = false;
     private ObjectDetectionIO io;
@@ -13,7 +13,7 @@ public class RollersSubsystem extends SubsystemBase {
     Trigger xTrigger = operatorController.x();
     Trigger yTrigger = operatorController.y();
 
-    public RollersSubsystem(RollersIO io) {}
+    IntakeSubsystem(IntakeIO io) {}
 
     private Command intake() {
         return runOnce(() -> {
@@ -34,10 +34,10 @@ public class RollersSubsystem extends SubsystemBase {
     @Override
     private void periodic() {
         if (io.distanceMM < 50 && isIntakeEnabled) {
-            isIntakeEnable = false;
+            isIntakeEnabled = false;
             setVolts(0);
         } else if (io.distanceMM < 50 && isOuttakeEnabled) {
-            isOuttakeEnable = false;
+            isOuttakeEnabled = false;
             setVolts(0);
         }
     }
