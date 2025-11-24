@@ -18,7 +18,7 @@ public class IntakeSubsystem extends SubsystemBase {
         return runOnce(() -> {
             isIntakeEnabled = true;
             isOuttakeEnabled = false;
-            i9o.setVolts(12);
+            io.setVolts(12);
         });
     }
 
