@@ -4,11 +4,11 @@ import com.ctre.phoenix6.hardware.TalonFX;
 
 class IntakeIOReal implements IntakeIO {
 
-    private final TalonFX intakeMotor = new TalonFX(Constants.IntakeCANID);
+    public final TalonFX intakeMotor = new TalonFX(Constants.IntakeCANID);
 
     @Override
-    private void updateInputs() {}
+    public void updateInputs() {}
 
     @Override
-    private void setVolts(int volts) {}
+    public void setVolts(int volts) {}
 }

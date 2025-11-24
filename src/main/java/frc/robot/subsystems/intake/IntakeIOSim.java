@@ -5,14 +5,14 @@ import com.ctre.phoenix6.sim.TalonFXSimState;
 
 class IntakeIOSim implements IntakeIO {
 
-    private final CoreTalonFX intakeMotorSim = new CoreTalonFX(Constants.IntakeCANID);
-    private final TalonFXSimState intakeMotorSimState = new TalonFXSimState(intakeMotorSim);
+    public final CoreTalonFX intakeMotorSim = new CoreTalonFX(Constants.IntakeCANID);
+    public final TalonFXSimState intakeMotorSimState = new TalonFXSimState(intakeMotorSim);
 
     @Override
-    private void updateInputs() {}
+    public void updateInputs() {}
 
     @Override
-    private void setVolts(double volts) {
-        rollerMotorSimState.setSupplyVoltage(volts);
+    public void setVolts(double volts) {
+        intakeMotorSimState.setSupplyVoltage(volts);
     }
 }
