@@ -7,11 +7,10 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class IntakeSubsystem extends SubsystemBase {
     private boolean isIntakeEnabled = false;
     private boolean isOuttakeEnabled = false;
-    private ObjectDetectionIO objectIO;
+    private ObjectDetectionIOInputsAutoLogged objectIO;
     private IntakeIO io;
 
-    IntakeSubsystem(IntakeIO io) {
-    	this.io = io;
+    public IntakeSubsystem() {
     }
 
     public Command intake() {
@@ -31,11 +30,11 @@ public class IntakeSubsystem extends SubsystemBase {
     }
 
     @Override
-    private void periodic() {
-        if (io.distanceMM < 50 && isIntakeEnabled) {
+    public void periodic() {
+        if (objectIO.distanceMM < 50 && isIntakeEnabled) {
             isIntakeEnabled = false;
             io.setVolts(0);
-        } else if (io.distanceMM < 50 && isOuttakeEnabled) {
+        } else if (objectIO.distanceMM < 50 && isOuttakeEnabled) {
             isOuttakeEnabled = false;
             io.setVolts(0);
         }

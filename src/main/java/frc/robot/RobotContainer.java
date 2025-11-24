@@ -20,7 +20,7 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
  */
 public class RobotContainer {
     // Subsystems
-    private IntakeSubsystem intake = new IntakeSubsystem(IntakeIOAutoLogged);
+    private IntakeSubsystem intake = new IntakeSubsystem();
     // Controller
     private final CommandXboxController controller = new CommandXboxController(0);
 
