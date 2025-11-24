@@ -13,7 +13,7 @@ public interface IntakeIO {
 
     public void updateInputs(IntakeIOInputsAutoLogged inputs);
 
-    public void setVolts(int volts);
+    public void setVolts(double volts);
 
     public void setAmps(int amps);
 }
