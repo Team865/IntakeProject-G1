@@ -11,7 +11,7 @@ public class IntakeSubsystem extends SubsystemBase {
 
     IntakeSubsystem(IntakeIO io) {}
 
-    private Command intake() {
+    public Command intake() {
         return runOnce(() -> {
             isIntakeEnabled = true;
             isOuttakeEnabled = false;
@@ -19,7 +19,7 @@ public class IntakeSubsystem extends SubsystemBase {
         });
     }
 
-    private Command outtake() {
+    public Command outtake() {
         return runOnce(() -> {
             isOuttakeEnabled = true;
             isIntakeEnabled = false;
