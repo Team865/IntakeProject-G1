@@ -2,7 +2,8 @@
 
 This is the upstream repository for the intake subsystem project for the offseason.
 
-# Licensing
+## Licensing
+### GPLv3 Components
 This project depends on AdvantageKit, which is licensed GPLv3:
 ```
                     GNU GENERAL PUBLIC LICENSE
@@ -680,6 +681,7 @@ the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
 ```
+### MIT Components
 As well as WPILib, which is licensed MIT
 ```
 Copyright (c) 2009-2025 FIRST and other WPILib contributors
