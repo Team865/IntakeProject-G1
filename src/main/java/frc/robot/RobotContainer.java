@@ -19,7 +19,7 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
  */
 public class RobotContainer {
     // Subsystems
-
+    private IntakeSubsystem intake = new IntakeSubsystem(RollerIOAutoLogged);
     // Controller
     private final CommandXboxController controller = new CommandXboxController(0);
 
@@ -49,7 +49,10 @@ public class RobotContainer {
      * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
      * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
      */
+
     private void configureButtonBindings() {
-        // Configure trigger bindings here
+        // Configure trigger bindings hre
+        controller.y().onTrue(intake.intake());
+        controller.x().onTrue(intake.outtake());
     }
 }
