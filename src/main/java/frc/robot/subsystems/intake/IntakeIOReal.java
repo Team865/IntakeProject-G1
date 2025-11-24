@@ -11,7 +11,7 @@ class IntakeIOReal implements IntakeIO {
     public void updateInputs(IntakeIOInputsAutoLogged inputs) {}
 
     @Override
-    public void setVolts(int volts) {}
+    public void setVolts(double volts) {}
 
     @Override
     public void setAmps(int amps) {
