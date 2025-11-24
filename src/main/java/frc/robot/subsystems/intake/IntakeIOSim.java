@@ -1,7 +1,7 @@
 package frc.robot.subsystems.intake;
 
 import com.ctre.phoenix6.hardware.core.CoreTalonFX;
-import com.ctre.phoenix6.sim;
+import com.ctre.phoenix6.sim.TalonFXSimState;
 
 class IntakeIOSim implements IntakeIO {
 
