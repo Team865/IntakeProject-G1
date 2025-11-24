@@ -11,9 +11,9 @@ public interface IntakeIO {
         double speedRads = 0.0;
     }
 
-    public void updateInputs(IntakeIOInputsAutoLogged inputs) {}
+    public void updateInputs(IntakeIOInputsAutoLogged inputs)
 
-    public void setVolts(int volts) {}
+    public void setVolts(int volts)
 
-    public void setAmps(int amps) {}
+    public void setAmps(int amps)
 }
