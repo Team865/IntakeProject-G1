@@ -8,7 +8,8 @@ import frc.robot.Constants.Mode;
 public class IntakeSubsystem extends SubsystemBase {
     private boolean isIntakeEnabled = false;
     private boolean isOuttakeEnabled = false;
-    private ObjectDetectionIOInputsAutoLogged objectIO = new ObjectDetectionIOInputsAutoLogged();
+    private ObjectDetectionIO objectIO = new ObjectDetectionIO();
+    private ObjectDetectionIOInputsAutoLogged objectIOInputs = new ObjectDetectionIOInputsAutoLogged();
     private IntakeIO intakeIO;
 
     public IntakeSubsystem() {
@@ -20,8 +21,8 @@ public class IntakeSubsystem extends SubsystemBase {
     }
 
     public Command intake() {
-        System.out.println("Intaking!");
         return runOnce(() -> {
+            System.out.println("Intaking!");
             isIntakeEnabled = true;
             isOuttakeEnabled = false;
             intakeIO.setVolts(12);
@@ -29,8 +30,8 @@ public class IntakeSubsystem extends SubsystemBase {
     }
 
     public Command outtake() {
-        System.out.println("Outtaking!");
         return runOnce(() -> {
+            System.out.println("Outtaking!");
             isOuttakeEnabled = true;
             isIntakeEnabled = false;
             intakeIO.setVolts(-12);
@@ -39,10 +40,11 @@ public class IntakeSubsystem extends SubsystemBase {
 
     @Override
     public void periodic() {
-        if (objectIO.distanceMM < 50 && isIntakeEnabled) {
+        objectIO.updateInputs(objectIOInputs);
+        if (objectIOInputs.distanceMM < 50 && isIntakeEnabled) {
             isIntakeEnabled = false;
             intakeIO.setVolts(0);
-        } else if (objectIO.distanceMM < 50 && isOuttakeEnabled) {
+        } else if (objectIOInputs.distanceMM < 50 && isOuttakeEnabled) {
             isOuttakeEnabled = false;
             intakeIO.setVolts(0);
         }

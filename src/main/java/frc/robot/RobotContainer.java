@@ -52,7 +52,7 @@ public class RobotContainer {
      */
 
     private void configureButtonBindings() {
-        // Configure trigger bindings hre
+        // Configure trigger bindings here
         controller.y().onTrue(intake.intake());
         controller.x().onTrue(intake.outtake());
     }

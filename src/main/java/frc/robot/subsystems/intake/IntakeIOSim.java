@@ -16,6 +16,7 @@ class IntakeIOSim implements IntakeIO {
 
     @Override
     public void setVolts(double volts) {
+        System.out.println("Setting volts");
         intakeMotorSimState.setSupplyVoltage(volts);
     }
 
