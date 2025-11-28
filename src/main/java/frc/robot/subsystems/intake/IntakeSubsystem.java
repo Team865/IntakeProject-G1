@@ -1,14 +1,15 @@
 package frc.robot.subsystems.intake;
 
-import edu.wpi.first.wpilibj2.command.Trigger;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.Constants;
 import frc.robot.Constants.Mode;
 
 public class IntakeSubsystem extends SubsystemBase {
     private boolean isIntakeEnabled = false;
     private boolean isOuttakeEnabled = false;
+    private boolean isOverrideEnabled = false;
     private ObjectDetectionIO objectIO = new ObjectDetectionIO();
     private ObjectDetectionIOInputsAutoLogged objectIOInputs = new ObjectDetectionIOInputsAutoLogged();
     private IntakeIO intakeIO;
@@ -22,16 +23,24 @@ public class IntakeSubsystem extends SubsystemBase {
         } else if (Constants.currentMode == Mode.REAL){
             intakeIO = new IntakeIOReal();
         }
-        isDetectingIntake.onTrue(runOnce(() -> {
-	    isIntakeEnabled = false;
-	    intakeIO.setVolts(0);
-	}));
-	isDetectingOuttake.onTrue(runOnce(() -> {
-            isOuttakeEnabled = false;
-            intakeIO.setVolts(0);
-	}));
+	if (!isOverrideEnabled) {
+            isDetectingIntake.onTrue(runOnce(() -> {
+	        isIntakeEnabled = false;
+	        intakeIO.setVolts(0);
+	    }));
+	    isDetectingOuttake.onTrue(runOnce(() -> {
+                isOuttakeEnabled = false;
+                intakeIO.setVolts(0);
+	    }));
+	}
     }
 
+    public Command override(boolean override) {
+        return runOnce(() -> {
+	    System.out.println("Overriding!");
+	    isOverrideEnabled = override;
+	});
+    }
     public Command intake() {
         return runOnce(() -> {
             System.out.println("Intaking!");

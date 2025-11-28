@@ -11,7 +11,7 @@ import frc.robot.subsystems.intake.IntakeSubsystem;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
-
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -23,7 +23,7 @@ public class RobotContainer {
     private IntakeSubsystem intake = new IntakeSubsystem();
     // Controller
     private final CommandXboxController controller = new CommandXboxController(0);
-
+    
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer() {
         switch (Constants.currentMode) {
@@ -55,5 +55,7 @@ public class RobotContainer {
         // Configure trigger bindings here
         controller.y().onTrue(intake.intake());
         controller.x().onTrue(intake.outtake());
+	controller.povUp().onTrue(intake.outtake()).onTrue(intake.override(true)).onFalse(intake.override(true));
+	controller.povDown().onTrue(intake.intake()).onTrue(intake.override(true)).onFalse(intake.override(true));
     }
 }
